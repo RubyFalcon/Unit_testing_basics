@@ -3,25 +3,29 @@ const someOrder = {
     {
       name: "Dragon food",
       price: 8,
-      quantity:8,
+      quantity: 8,
     },
     {
       name: "Dragon cage(small)",
       price: 800,
-      quantity:2,
+      quantity: 2,
     },
-    
+
     {
       name: "Shipping",
       price: 800,
-      quantity:2,
+      shipping: true,
     },
-    
   ],
 };
 
-const orderTotal = order => order.items
-    .reduce((prev, cur) => prev +(cur.price * cur.quantity), 0)
-
-result = orderTotal(someOrder) //1664
-
+const orderTotal = (order) => {
+  const totalItems = order.items
+    .filter((x) => !x.shipping)
+    .reduce((prev, cur) => prev + cur.price * cur.quantity, 0);
+  const shippingItem = order.items.find((x) => !!x.shipping);
+  const shipping = totalItems > 1000 ? 0 : shippingItem.price;
+  return totalItems + shipping;
+};
+result = orderTotal(someOrder); //1664
+console.log(result);
