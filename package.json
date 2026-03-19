@@ -1,0 +1,22 @@
+{
+  "name": "unit_testing_basics",
+  "version": "1.0.0",
+  "description": "A basic  project to learn and use unit-testing using JavaScript and Jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RubyFalcon/Unit_testing_basics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RubyFalcon/Unit_testing_basics/issues"
+  },
+  "homepage": "https://github.com/RubyFalcon/Unit_testing_basics#readme",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
+}
