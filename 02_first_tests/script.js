@@ -17,16 +17,32 @@ if (
     ) !== 6 
 ) throw new Error("Check fail: Quantity")
 
+
+if (
+  orderTotal({
+    items: [
+      {
+        name: "Dragon candy",
+        price: 3,
+      },
+    ],
+  }) !== 3
+) {
+  throw new Error("Check fail: quantity specified");
+}
+
 if (
   orderTotal({
     items: [
       {
         name: "Dragon food",
         price: 8,
+        quantity: 1
       },
       {
         name: "Dragon cage(small)",
         price: 800,
+        quantity: 1,
       },
     ],
   }) !== 808
@@ -41,10 +57,12 @@ if (
       {
         name: "Dragon Collar",
         price: 20,
+        quantity: 1,
       },
       {
         name: "Dragon chew toy",
         price: 40,
+        quantity: 1,
       },
     ],
   }) !== 60
